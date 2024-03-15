@@ -16,6 +16,11 @@
 		C0D8F1732BA3C9340052E558 /* CashlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F1722BA3C9340052E558 /* CashlyUITestsLaunchTests.swift */; };
 		C0D8F1802BA3CC8D0052E558 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F17F2BA3CC8D0052E558 /* Extensions.swift */; };
 		C0D8F1822BA3CEA00052E558 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F1812BA3CEA00052E558 /* TransactionModel.swift */; };
+		C0D8F1842BA3CF9B0052E558 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F1832BA3CF9B0052E558 /* PreviewData.swift */; };
+		C0D8F1862BA3D0820052E558 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F1852BA3D0820052E558 /* TransactionRow.swift */; };
+		C0D8F1892BA3D9370052E558 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = C0D8F1882BA3D9370052E558 /* SwiftUIFontIcon */; };
+		C0D8F18B2BA3D9B30052E558 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F18A2BA3D9B30052E558 /* TransactionListViewModel.swift */; };
+		C0D8F18D2BA3DFA30052E558 /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F18C2BA3DFA30052E558 /* RecentTransactionList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,10 @@
 		C0D8F1722BA3C9340052E558 /* CashlyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashlyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C0D8F17F2BA3CC8D0052E558 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C0D8F1812BA3CEA00052E558 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		C0D8F1832BA3CF9B0052E558 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		C0D8F1852BA3D0820052E558 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		C0D8F18A2BA3D9B30052E558 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		C0D8F18C2BA3DFA30052E558 /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D8F1892BA3D9370052E558 /* SwiftUIFontIcon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +110,10 @@
 			children = (
 				C0D8F1552BA3C9320052E558 /* CashlyApp.swift */,
 				C0D8F1572BA3C9320052E558 /* ContentView.swift */,
+				C0D8F18C2BA3DFA30052E558 /* RecentTransactionList.swift */,
 				C0D8F1812BA3CEA00052E558 /* TransactionModel.swift */,
+				C0D8F1852BA3D0820052E558 /* TransactionRow.swift */,
+				C0D8F18A2BA3D9B30052E558 /* TransactionListViewModel.swift */,
 				C0D8F17F2BA3CC8D0052E558 /* Extensions.swift */,
 				C0D8F1592BA3C9340052E558 /* Assets.xcassets */,
 				C0D8F15B2BA3C9340052E558 /* Preview Content */,
@@ -112,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C0D8F15C2BA3C9340052E558 /* Preview Assets.xcassets */,
+				C0D8F1832BA3CF9B0052E558 /* PreviewData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -149,6 +163,9 @@
 			dependencies = (
 			);
 			name = Cashly;
+			packageProductDependencies = (
+				C0D8F1882BA3D9370052E558 /* SwiftUIFontIcon */,
+			);
 			productName = Cashly;
 			productReference = C0D8F1522BA3C9320052E558 /* Cashly.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +238,9 @@
 				Base,
 			);
 			mainGroup = C0D8F1492BA3C9310052E558;
+			packageReferences = (
+				C0D8F1872BA3D9370052E558 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
+			);
 			productRefGroup = C0D8F1532BA3C9320052E558 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,9 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D8F1842BA3CF9B0052E558 /* PreviewData.swift in Sources */,
+				C0D8F18D2BA3DFA30052E558 /* RecentTransactionList.swift in Sources */,
 				C0D8F1822BA3CEA00052E558 /* TransactionModel.swift in Sources */,
 				C0D8F1582BA3C9320052E558 /* ContentView.swift in Sources */,
+				C0D8F1862BA3D0820052E558 /* TransactionRow.swift in Sources */,
 				C0D8F1802BA3CC8D0052E558 /* Extensions.swift in Sources */,
+				C0D8F18B2BA3D9B30052E558 /* TransactionListViewModel.swift in Sources */,
 				C0D8F1562BA3C9320052E558 /* CashlyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +620,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0D8F1872BA3D9370052E558 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0D8F1882BA3D9370052E558 /* SwiftUIFontIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0D8F1872BA3D9370052E558 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
+			productName = SwiftUIFontIcon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C0D8F14A2BA3C9310052E558 /* Project object */;
 }
