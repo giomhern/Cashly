@@ -19,7 +19,7 @@ struct RecentTransactionList: View {
                 Spacer()
                 // MARK: Header Link
                 NavigationLink{
-                    
+                    _TransactionList()
                 } label: {
                     HStack(spacing: 4){
                         Text("See All")
@@ -32,8 +32,12 @@ struct RecentTransactionList: View {
             
             
             // MARK: Recent Transaction List
-            ForEach(transactionListVM.transactions.prefix(5)) {
-                transaction in TransactionRow(transaction: transaction)
+            ForEach(Array(transactionListVM.transactions.prefix(5).enumerated()), id: \.element) {
+                index, transaction in
+                TransactionRow(transaction: transaction)
+                Divider()
+                    .opacity(index == 4 ? 0.0: 0.8)
+                
             }
         }
         .padding()

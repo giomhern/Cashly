@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import Collections
 import Combine
+
+typealias TransactionGroup = OrderedDictionary<String, [Transaction]>
+typealias TransactionPrefixSum = [(String, Double)]
 
 // turns any object into a publisher and notifies of state changes
 final class TransactionListViewModel: ObservableObject {
@@ -46,5 +50,12 @@ final class TransactionListViewModel: ObservableObject {
                 dump(self?.transactions)
             }
             .store(in: &cancellables)
+    }
+    
+    func groupTransactionByMonth() -> TransactionGroup {
+        guard !transactions.isEmpty else { return [:] }
+        
+        let groupTransactions = TransactionGroup(grouping: transactions) { $0.month }
+        return groupTransactions
     }
 }
