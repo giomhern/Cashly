@@ -58,4 +58,30 @@ final class TransactionListViewModel: ObservableObject {
         let groupTransactions = TransactionGroup(grouping: transactions) { $0.month }
         return groupTransactions
     }
+    
+    func accumulateTransactions() -> TransactionPrefixSum {
+        print("accumulate transactions logging statement")
+        guard !transactions.isEmpty else {return []}
+        
+        let today = "02/17/2022".dateParse()
+        let dateInterval = Calendar.current.dateInterval(of: .month, for: today)!
+        print("date interval", dateInterval)
+        
+        var sum: Double = .zero
+        var cumulativeSum = TransactionPrefixSum()
+        
+        for date in stride(from: dateInterval.start, to: today, by: 60 * 60 * 24){
+            let dailyExpenses = transactions.filter { $0.dateParsed == date && $0.isExpense }
+            let dailyTotal = dailyExpenses.reduce(0) { $0 - $1.signedAmount}
+            
+            sum += dailyTotal
+            sum = sum.roundedTo2Digits()
+            cumulativeSum.append((date.formatted(), sum))
+            print(date.formatted(), "Daily total: ", dailyTotal, "sum: ", sum)
+            
+        }
+        
+        return cumulativeSum
+        
+    }
 }
